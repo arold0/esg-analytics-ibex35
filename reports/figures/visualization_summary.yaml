@@ -1,0 +1,20 @@
+file_formats:
+  html: Interactive plots for web viewing
+  png: Static images for reports and presentations
+generated_charts:
+  comprehensive_dashboard: Dashboard comprehensivo
+  correlation_heatmap: Mapa de calor de correlaciones ESG-Financieras
+  esg_distributions: "Distribuciones de m\xE9tricas ESG"
+  scatter_plots: "Gr\xE1ficos de dispersi\xF3n ESG vs Financieras"
+  sector_comparison: "Comparaci\xF3n por sectores"
+  top_performers: Top y Bottom ESG Performers
+technical_details:
+  exportable: Can be exported to various formats
+  interactivity: Full interactive plots with hover information
+  library: Plotly
+  responsive: Adaptable to different screen sizes
+visualization_metadata:
+  date: '2025-08-31 16:48:39'
+  output_directory: reports/figures
+  report_file: reports/figures/visualization_report.html
+  total_visualizations: 6

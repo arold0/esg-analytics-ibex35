@@ -1,0 +1,105 @@
+# ESG Analytics IBEX35 - Complete Project Requirements
+# ===================================================
+# This file contains all dependencies required to run the complete ESG analytics project
+# from data collection to final visualization and reporting.
+
+# Core Data Manipulation & Analysis
+# =================================
+pandas>=1.5.0                    # Data manipulation and analysis
+numpy>=1.24.0                    # Numerical computing and array operations
+
+# Financial Data Collection
+# =========================
+yfinance>=0.2.12                 # Yahoo Finance API for stock market data
+requests>=2.31.0                 # HTTP library for API calls
+beautifulsoup4>=4.12.0           # Web scraping and HTML parsing
+selenium>=4.15.0                 # Web automation for dynamic content
+lxml>=4.9.0                      # XML and HTML processing
+
+# Data Processing & File Handling
+# ===============================
+openpyxl>=3.1.0                  # Excel file reading and writing
+
+# Statistical Analysis & Machine Learning
+# ======================================
+scikit-learn>=1.3.0              # Machine learning algorithms
+statsmodels>=0.14.0              # Statistical modeling and hypothesis testing
+scipy>=1.11.0                    # Scientific computing and optimization
+
+# Data Visualization
+# ==================
+matplotlib>=3.7.0                # Basic plotting and visualization
+seaborn>=0.12.0                  # Statistical data visualization
+plotly>=5.17.0                   # Interactive plots and dashboards
+
+# Web Applications & Dashboards
+# =============================
+dash>=2.14.0                     # Interactive web applications
+streamlit>=1.28.0                # Rapid web app development for data science
+
+# Additional Utilities
+# ===================
+# Note: These packages are automatically installed as dependencies
+# but listed here for completeness:
+# - urllib3: HTTP client (dependency of requests)
+# - certifi: SSL certificates (dependency of requests)
+# - charset-normalizer: Character encoding (dependency of requests)
+# - idna: Internationalized domain names (dependency of requests)
+# - six: Python 2/3 compatibility (dependency of multiple packages)
+# - python-dateutil: Date utilities (dependency of pandas)
+# - pytz: Timezone support (dependency of pandas)
+# - tzdata: Timezone database (dependency of pandas)
+# - cycler: Plotting cycle utilities (dependency of matplotlib)
+# - kiwisolver: Constraint solving (dependency of matplotlib)
+# - pillow: Image processing (dependency of matplotlib)
+# - pyparsing: Parsing utilities (dependency of matplotlib)
+# - packaging: Package utilities (dependency of multiple packages)
+# - fonttools: Font utilities (dependency of matplotlib)
+# - contourpy: Contour plotting (dependency of matplotlib)
+# - joblib: Parallel processing (dependency of scikit-learn)
+# - threadpoolctl: Thread pool control (dependency of scikit-learn)
+# - patsy: Statistical formulas (dependency of statsmodels)
+# - et-xmlfile: Excel XML support (dependency of openpyxl)
+# - jinja2: Template engine (dependency of dash)
+# - werkzeug: WSGI utilities (dependency of dash)
+# - click: Command line interface (dependency of dash)
+# - itsdangerous: Security utilities (dependency of dash)
+# - markupsafe: Safe markup (dependency of jinja2)
+# - tenacity: Retry utilities (dependency of streamlit)
+# - toml: TOML parser (dependency of streamlit)
+# - protobuf: Protocol buffers (dependency of streamlit)
+# - altair: Declarative visualization (dependency of streamlit)
+# - pydeck: Deck.gl integration (dependency of streamlit)
+# - watchdog: File system monitoring (dependency of streamlit)
+# - gitpython: Git integration (dependency of streamlit)
+# - pyarrow: Arrow data format (dependency of streamlit)
+# - cachetools: Caching utilities (dependency of streamlit)
+# - semver: Semantic versioning (dependency of streamlit)
+# - packaging: Package utilities (dependency of streamlit)
+# - validators: Data validation (dependency of streamlit)
+# - jsonschema: JSON schema validation (dependency of streamlit)
+# - typing-extensions: Type hints (dependency of multiple packages)
+# - zipp: Path utilities (dependency of multiple packages)
+# - importlib-metadata: Metadata access (dependency of multiple packages)
+# - setuptools: Package installation (dependency of multiple packages)
+# - wheel: Package building (dependency of multiple packages)
+# - pip: Package installer (dependency of multiple packages)
+
+# Installation Instructions:
+# =========================
+# 1. Create a virtual environment:
+#    python -m venv venv
+#    source venv/bin/activate  # On Windows: venv\Scripts\activate
+#
+# 2. Install all requirements:
+#    pip install -r requirements.txt
+#
+# 3. For development, install additional tools:
+#    pip install jupyter notebook ipykernel
+#    pip install black flake8 pytest
+#
+# 4. Activate Jupyter kernel:
+#    python -m ipykernel install --user --name=esg-analytics
+#
+# Note: Some packages may require system-level dependencies
+# (e.g., ChromeDriver for Selenium, system fonts for matplotlib)

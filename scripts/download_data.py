@@ -213,58 +213,155 @@ def scrape_company_sustainability_reports(companies):
 
 def download_all_data():
     """
-    Función principal para descargar todos los datos
+    Función principal para descargar todos los datos del IBEX35 completo
     """
-    logger.info("Starting comprehensive data download")
+    logger.info("🚀 Starting complete IBEX35 data download")
     
     # Crear directorios necesarios
     os.makedirs('data/raw', exist_ok=True)
     os.makedirs('data/processed', exist_ok=True)
+    os.makedirs('data/cleaned', exist_ok=True)
     os.makedirs('logs', exist_ok=True)
     
-    # 1. Obtener lista de empresas IBEX35
-    logger.info("Step 1: Getting IBEX35 companies list")
+    # 1. Obtener lista completa de empresas IBEX35
+    logger.info("📋 Step 1: Getting complete IBEX35 companies list")
     companies_df = get_ibex35_companies()
-    companies_df.to_csv('data/raw/ibex35_companies.csv', index=False)
+    companies_df.to_csv('data/raw/ibex35_companies_complete.csv', index=False)
+    logger.info(f"✅ Loaded {len(companies_df)} companies")
     
-    # 2. Descargar datos financieros
-    logger.info("Step 2: Downloading financial data")
+    # 2. Descargar datos financieros completos (2019-2024)
+    logger.info("📈 Step 2: Downloading complete financial data (2019-2024)")
+    logger.info("⏱️  This may take several minutes due to rate limiting...")
     tickers = companies_df['ticker'].tolist()
-    financial_data = download_financial_data(tickers)
+    financial_data = download_financial_data(
+        tickers, 
+        start_date='2019-01-01', 
+        end_date='2024-12-31',
+        delay=1.0  # Delay de 1 segundo para respetar rate limits
+    )
     
-    # 3. Calcular métricas financieras
-    logger.info("Step 3: Calculating financial metrics")
+    # 3. Calcular métricas financieras completas
+    logger.info("🧮 Step 3: Calculating comprehensive financial metrics")
     financial_metrics = calculate_financial_metrics(financial_data)
-    financial_metrics.to_csv('data/raw/financial_metrics.csv', index=False)
+    financial_metrics.to_csv('data/raw/ibex35_financial_metrics_complete.csv', index=False)
     
-    # 4. Guardar datos financieros
-    logger.info("Step 4: Saving financial data")
-    save_data_to_files(financial_data)
+    # 4. Guardar todos los datos financieros
+    logger.info("💾 Step 4: Saving all financial data")
+    save_data_to_files(financial_data, 'data/raw/ibex35_complete')
     
-    # 5. Scraping de datos ESG (opcional)
-    logger.info("Step 5: Scraping ESG data")
+    # 5. Scraping de datos ESG (opcional - solo primeras 10 empresas para evitar bloqueos)
+    logger.info("🌱 Step 5: Scraping ESG data (first 10 companies)")
     company_names = companies_df['company_name'].tolist()
     
     # Scraping de Sustainalytics
-    sustainalytics_data = scrape_esg_data_sustainalytics(company_names[:5])  # Solo primeras 5 para prueba
+    sustainalytics_data = scrape_esg_data_sustainalytics(company_names[:10])
     if not sustainalytics_data.empty:
         sustainalytics_data.to_csv('data/raw/sustainalytics_esg_data.csv', index=False)
     
     # Scraping de informes de sostenibilidad
-    sustainability_data = scrape_company_sustainability_reports(company_names[:5])  # Solo primeras 5 para prueba
+    sustainability_data = scrape_company_sustainability_reports(company_names[:10])
     if not sustainability_data.empty:
         sustainability_data.to_csv('data/raw/sustainability_reports_data.csv', index=False)
     
-    # 6. Crear resumen de datos descargados
-    logger.info("Step 6: Creating data summary")
-    create_data_summary(financial_data, financial_metrics)
+    # 6. Crear resumen completo de datos descargados
+    logger.info("📊 Step 6: Creating comprehensive data summary")
+    create_complete_data_summary(financial_data, financial_metrics, companies_df)
     
-    logger.info("Data download completed successfully")
+    logger.info("🎉 Complete IBEX35 data download finished successfully")
+
+
+def create_complete_data_summary(financial_data, financial_metrics, companies_df):
+    """
+    Crea un resumen completo de los datos descargados
+    
+    Args:
+        financial_data: Datos financieros descargados
+        financial_metrics: Métricas financieras calculadas
+        companies_df: DataFrame con información de empresas
+    """
+    from datetime import datetime
+    
+    # Estadísticas de descarga
+    companies_with_data = len([k for k, v in financial_data.items() if not v['prices'].empty])
+    companies_without_data = len(financial_data) - companies_with_data
+    
+    # Análisis por sector
+    sector_analysis = {}
+    for _, company in companies_df.iterrows():
+        ticker = company['ticker']
+        sector = company['sector']
+        
+        if ticker in financial_data and not financial_data[ticker]['prices'].empty:
+            if sector not in sector_analysis:
+                sector_analysis[sector] = {'with_data': 0, 'total': 0}
+            sector_analysis[sector]['with_data'] += 1
+        sector_analysis[sector]['total'] = sector_analysis.get(sector, {}).get('total', 0) + 1
+    
+    # Métricas financieras promedio
+    avg_metrics = {}
+    if not financial_metrics.empty:
+        numeric_columns = financial_metrics.select_dtypes(include=['float64', 'int64']).columns
+        for col in numeric_columns:
+            if col != 'ticker':
+                avg_metrics[f'avg_{col}'] = financial_metrics[col].mean()
+    
+    summary = {
+        'download_info': {
+            'date': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+            'total_companies': len(financial_data),
+            'companies_with_data': companies_with_data,
+            'companies_without_data': companies_without_data,
+            'success_rate': f"{(companies_with_data/len(financial_data)*100):.1f}%",
+            'data_period': '2019-2024'
+        },
+        'sector_analysis': sector_analysis,
+        'average_metrics': avg_metrics,
+        'data_files': {
+            'companies_list': 'data/raw/ibex35_companies_complete.csv',
+            'financial_metrics': 'data/raw/ibex35_financial_metrics_complete.csv',
+            'price_data': 'data/raw/ibex35_complete/',
+            'logs': 'logs/data_download.log'
+        }
+    }
+    
+    # Guardar resumen
+    with open('data/raw/download_summary_complete.yaml', 'w') as f:
+        yaml.dump(summary, f, default_flow_style=False, indent=2)
+    
+    # Mostrar resumen en consola
+    print("\n" + "="*60)
+    print("📊 COMPLETE IBEX35 DATA DOWNLOAD SUMMARY")
+    print("="*60)
+    print(f"✅ Total companies: {summary['download_info']['total_companies']}")
+    print(f"✅ Companies with data: {summary['download_info']['companies_with_data']}")
+    print(f"✅ Success rate: {summary['download_info']['success_rate']}")
+    print(f"✅ Data period: {summary['download_info']['data_period']}")
+    
+    print("\n📈 Sector Analysis:")
+    for sector, stats in sector_analysis.items():
+        success_rate = (stats['with_data'] / stats['total']) * 100
+        print(f"   {sector}: {stats['with_data']}/{stats['total']} ({success_rate:.1f}%)")
+    
+    if avg_metrics:
+        print("\n📊 Average Financial Metrics:")
+        for metric, value in list(avg_metrics.items())[:5]:  # Mostrar solo las primeras 5
+            print(f"   {metric}: {value:.2f}")
+    
+    print(f"\n💾 Files saved:")
+    print(f"   📄 Companies list: {summary['data_files']['companies_list']}")
+    print(f"   📊 Financial metrics: {summary['data_files']['financial_metrics']}")
+    print(f"   📈 Price data: {summary['data_files']['price_data']}")
+    print(f"   📝 Logs: {summary['data_files']['logs']}")
+    
+    print("\n🎉 Download completed successfully!")
+    print("="*60)
+    
+    logger.info(f"Complete data summary created: {summary['download_info']}")
 
 
 def create_data_summary(financial_data, financial_metrics):
     """
-    Crea un resumen de los datos descargados
+    Crea un resumen básico de los datos descargados (para compatibilidad)
     
     Args:
         financial_data: Datos financieros descargados

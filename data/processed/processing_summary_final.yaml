@@ -1,0 +1,115 @@
+data_quality:
+  columns_with_data:
+  - ticker
+  - current_price
+  - returns_1y
+  - volatility_30d
+  - roe
+  - roa
+  - sharpe_ratio
+  - max_drawdown
+  - beta
+  - environmental_score
+  - social_score
+  - governance_score
+  - carbon_emissions
+  - energy_efficiency
+  - gender_diversity
+  - board_independence
+  - E_Score
+  - S_Score
+  - G_Score
+  - ESG_Total
+  missing_values_percentage:
+    ESG_Total: 0.0
+    E_Score: 0.0
+    G_Score: 0.0
+    S_Score: 0.0
+    beta: 0.0
+    board_independence: 0.0
+    carbon_emissions: 0.0
+    current_price: 0.0
+    energy_efficiency: 0.0
+    environmental_score: 0.0
+    gender_diversity: 0.0
+    governance_score: 0.0
+    max_drawdown: 0.0
+    returns_1y: 0.0
+    roa: 0.0
+    roe: 0.0
+    sharpe_ratio: 0.0
+    social_score: 0.0
+    ticker: 0.0
+    volatility_30d: 0.0
+  numeric_columns:
+  - current_price
+  - returns_1y
+  - volatility_30d
+  - roe
+  - roa
+  - sharpe_ratio
+  - max_drawdown
+  - beta
+  - environmental_score
+  - social_score
+  - governance_score
+  - carbon_emissions
+  - energy_efficiency
+  - gender_diversity
+  - board_independence
+  - E_Score
+  - S_Score
+  - G_Score
+  - ESG_Total
+esg_scores_summary:
+  avg_environmental_score: !!python/object/apply:numpy._core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    c1Eg0Ye8SkA=
+  avg_esg_total: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    LMVzS4wLSkA=
+  avg_governance_score: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    Abhj2bSxS0A=
+  avg_social_score: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    owDQSp2nR0A=
+financial_metrics_summary:
+  avg_roa: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    20K2sqU8EUA=
+  avg_roe: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    0eBgW6WTM0A=
+  avg_sharpe_ratio: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    CNo3Oi2T1j8=
+  avg_volatility: !!python/object/apply:numpy._core.multiarray.scalar
+  - *id001
+  - !!binary |
+    YrTaEuYcjD8=
+processing_info:
+  date: '2025-08-31 16:30:51'
+  esg_companies_processed: 35
+  financial_companies_cleaned: 31
+  total_companies_processed: 31

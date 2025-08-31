@@ -1,0 +1,45 @@
+columns_processed:
+- ticker
+- current_price
+- returns_1y
+- volatility_30d
+- roe
+- roa
+- sharpe_ratio
+- max_drawdown
+- beta
+- environmental_score
+- social_score
+- governance_score
+- carbon_emissions
+- energy_efficiency
+- gender_diversity
+- board_independence
+- E_Score
+- S_Score
+- G_Score
+- ESG_Total
+missing_values_summary:
+  ESG_Total: 0
+  E_Score: 0
+  G_Score: 0
+  S_Score: 0
+  beta: 0
+  board_independence: 0
+  carbon_emissions: 0
+  current_price: 0
+  energy_efficiency: 0
+  environmental_score: 0
+  gender_diversity: 0
+  governance_score: 0
+  max_drawdown: 0
+  returns_1y: 0
+  roa: 0
+  roe: 0
+  sharpe_ratio: 0
+  social_score: 0
+  ticker: 0
+  volatility_30d: 0
+output_file: data/processed/ibex35_processed_data.csv
+processing_date: '2025-08-31 16:30:51'
+total_companies: 31

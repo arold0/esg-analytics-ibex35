@@ -1,0 +1,646 @@
+correlation_analysis:
+  correlation_matrix:
+    ESG_Total:
+      ESG_Total: 1.0
+      E_Score: 0.3284814629758886
+      G_Score: 0.640169601395604
+      S_Score: 0.6753035707106287
+      beta: .nan
+      current_price: 0.17940360044095624
+      environmental_score: 0.1712995296350158
+      governance_score: 0.35953229564441
+      returns_1y: -0.3414972680705389
+      roa: -0.21222316525602541
+      roe: -0.1441728689010583
+      sharpe_ratio: 0.17892620751039875
+      social_score: 0.07359037885809697
+      volatility_30d: 0.3846446732195143
+    E_Score:
+      ESG_Total: 0.3284814629758886
+      E_Score: 1.0
+      G_Score: -0.350537631553008
+      S_Score: -0.07784037092856073
+      beta: .nan
+      current_price: 0.2603607676604243
+      environmental_score: 0.7429622619337696
+      governance_score: -0.361525106694438
+      returns_1y: -0.3751834581249465
+      roa: 0.20728584801796288
+      roe: 0.21592801658116562
+      sharpe_ratio: 0.12454447444738678
+      social_score: -0.18239160865544102
+      volatility_30d: 0.03854087341310341
+    G_Score:
+      ESG_Total: 0.640169601395604
+      E_Score: -0.350537631553008
+      G_Score: 1.0
+      S_Score: 0.2961355316592315
+      beta: .nan
+      current_price: -0.00524488526029863
+      environmental_score: -0.3760824625126328
+      governance_score: 0.7565282360975377
+      returns_1y: -0.05133404737049798
+      roa: -0.3000620378603357
+      roe: -0.1593871182541739
+      sharpe_ratio: 0.2678145841302213
+      social_score: 0.014143511935163885
+      volatility_30d: 0.42740229808596913
+    S_Score:
+      ESG_Total: 0.6753035707106287
+      E_Score: -0.07784037092856073
+      G_Score: 0.2961355316592315
+      S_Score: 1.0
+      beta: .nan
+      current_price: 0.04456225825584337
+      environmental_score: -0.041161133675182156
+      governance_score: 0.09678992425621472
+      returns_1y: -0.1449190083753768
+      roa: -0.24992690809424173
+      roe: -0.32023463430602134
+      sharpe_ratio: -0.1670865889379612
+      social_score: 0.3414796887598567
+      volatility_30d: 0.11719731274482302
+    beta:
+      ESG_Total: .nan
+      E_Score: .nan
+      G_Score: .nan
+      S_Score: .nan
+      beta: .nan
+      current_price: .nan
+      environmental_score: .nan
+      governance_score: .nan
+      returns_1y: .nan
+      roa: .nan
+      roe: .nan
+      sharpe_ratio: .nan
+      social_score: .nan
+      volatility_30d: .nan
+    current_price:
+      ESG_Total: 0.17940360044095624
+      E_Score: 0.2603607676604243
+      G_Score: -0.00524488526029863
+      S_Score: 0.04456225825584337
+      beta: .nan
+      current_price: 1.0
+      environmental_score: 0.17370202911714253
+      governance_score: 0.09263152796174974
+      returns_1y: -0.2715268062209565
+      roa: 0.5154637239538096
+      roe: 0.23386021290164383
+      sharpe_ratio: 0.15680894326527378
+      social_score: 0.1307645380911325
+      volatility_30d: -0.046552712356467664
+    environmental_score:
+      ESG_Total: 0.1712995296350158
+      E_Score: 0.7429622619337696
+      G_Score: -0.3760824625126328
+      S_Score: -0.041161133675182156
+      beta: .nan
+      current_price: 0.17370202911714253
+      environmental_score: 1.0
+      governance_score: -0.29762467605847304
+      returns_1y: -0.20806187760158043
+      roa: 0.024576323023208148
+      roe: -0.021640227144163176
+      sharpe_ratio: 0.062369962800090425
+      social_score: 0.010773100493386022
+      volatility_30d: -0.09004831042864832
+    governance_score:
+      ESG_Total: 0.35953229564441
+      E_Score: -0.361525106694438
+      G_Score: 0.7565282360975377
+      S_Score: 0.09678992425621472
+      beta: .nan
+      current_price: 0.09263152796174974
+      environmental_score: -0.29762467605847304
+      governance_score: 1.0
+      returns_1y: -0.09384945991738226
+      roa: -0.10069912384711226
+      roe: -0.34951289624357246
+      sharpe_ratio: 0.11520928619090319
+      social_score: 0.05413283775139063
+      volatility_30d: 0.4294449571035955
+    returns_1y:
+      ESG_Total: -0.3414972680705389
+      E_Score: -0.3751834581249465
+      G_Score: -0.05133404737049798
+      S_Score: -0.1449190083753768
+      beta: .nan
+      current_price: -0.2715268062209565
+      environmental_score: -0.20806187760158043
+      governance_score: -0.09384945991738226
+      returns_1y: 1.0
+      roa: -0.20408566944619655
+      roe: 0.002841230381996066
+      sharpe_ratio: -0.21170853223581967
+      social_score: 0.20553591169607874
+      volatility_30d: -0.49336989462415815
+    roa:
+      ESG_Total: -0.21222316525602541
+      E_Score: 0.20728584801796288
+      G_Score: -0.3000620378603357
+      S_Score: -0.24992690809424173
+      beta: .nan
+      current_price: 0.5154637239538096
+      environmental_score: 0.024576323023208148
+      governance_score: -0.10069912384711226
+      returns_1y: -0.20408566944619655
+      roa: 1.0
+      roe: 0.37588543346197906
+      sharpe_ratio: 0.11206090162612142
+      social_score: 0.11230049037908535
+      volatility_30d: -0.014217607466977034
+    roe:
+      ESG_Total: -0.1441728689010583
+      E_Score: 0.21592801658116562
+      G_Score: -0.1593871182541739
+      S_Score: -0.32023463430602134
+      beta: .nan
+      current_price: 0.23386021290164383
+      environmental_score: -0.021640227144163176
+      governance_score: -0.34951289624357246
+      returns_1y: 0.002841230381996066
+      roa: 0.37588543346197906
+      roe: 1.0
+      sharpe_ratio: 0.38314715341284405
+      social_score: 0.004301782569655562
+      volatility_30d: -0.13506706153075645
+    sharpe_ratio:
+      ESG_Total: 0.17892620751039875
+      E_Score: 0.12454447444738678
+      G_Score: 0.2678145841302213
+      S_Score: -0.1670865889379612
+      beta: .nan
+      current_price: 0.15680894326527378
+      environmental_score: 0.062369962800090425
+      governance_score: 0.11520928619090319
+      returns_1y: -0.21170853223581967
+      roa: 0.11206090162612142
+      roe: 0.38314715341284405
+      sharpe_ratio: 1.0
+      social_score: -0.3628697699097513
+      volatility_30d: -0.08245271551169198
+    social_score:
+      ESG_Total: 0.07359037885809697
+      E_Score: -0.18239160865544102
+      G_Score: 0.014143511935163885
+      S_Score: 0.3414796887598567
+      beta: .nan
+      current_price: 0.1307645380911325
+      environmental_score: 0.010773100493386022
+      governance_score: 0.05413283775139063
+      returns_1y: 0.20553591169607874
+      roa: 0.11230049037908535
+      roe: 0.004301782569655562
+      sharpe_ratio: -0.3628697699097513
+      social_score: 1.0
+      volatility_30d: 0.07459197593814428
+    volatility_30d:
+      ESG_Total: 0.3846446732195143
+      E_Score: 0.03854087341310341
+      G_Score: 0.42740229808596913
+      S_Score: 0.11719731274482302
+      beta: .nan
+      current_price: -0.046552712356467664
+      environmental_score: -0.09004831042864832
+      governance_score: 0.4294449571035955
+      returns_1y: -0.49336989462415815
+      roa: -0.014217607466977034
+      roe: -0.13506706153075645
+      sharpe_ratio: -0.08245271551169198
+      social_score: 0.07459197593814428
+      volatility_30d: 1.0
+  esg_columns:
+  - environmental_score
+  - social_score
+  - governance_score
+  - E_Score
+  - S_Score
+  - G_Score
+  - ESG_Total
+  esg_financial_correlations:
+    beta:
+      ESG_Total: .nan
+      E_Score: .nan
+      G_Score: .nan
+      S_Score: .nan
+      environmental_score: .nan
+      governance_score: .nan
+      social_score: .nan
+    current_price:
+      ESG_Total: 0.17940360044095624
+      E_Score: 0.2603607676604243
+      G_Score: -0.00524488526029863
+      S_Score: 0.04456225825584337
+      environmental_score: 0.17370202911714253
+      governance_score: 0.09263152796174974
+      social_score: 0.1307645380911325
+    returns_1y:
+      ESG_Total: -0.3414972680705389
+      E_Score: -0.3751834581249465
+      G_Score: -0.05133404737049798
+      S_Score: -0.1449190083753768
+      environmental_score: -0.20806187760158043
+      governance_score: -0.09384945991738226
+      social_score: 0.20553591169607874
+    roa:
+      ESG_Total: -0.21222316525602541
+      E_Score: 0.20728584801796288
+      G_Score: -0.3000620378603357
+      S_Score: -0.24992690809424173
+      environmental_score: 0.024576323023208148
+      governance_score: -0.10069912384711226
+      social_score: 0.11230049037908535
+    roe:
+      ESG_Total: -0.1441728689010583
+      E_Score: 0.21592801658116562
+      G_Score: -0.1593871182541739
+      S_Score: -0.32023463430602134
+      environmental_score: -0.021640227144163176
+      governance_score: -0.34951289624357246
+      social_score: 0.004301782569655562
+    sharpe_ratio:
+      ESG_Total: 0.17892620751039875
+      E_Score: 0.12454447444738678
+      G_Score: 0.2678145841302213
+      S_Score: -0.1670865889379612
+      environmental_score: 0.062369962800090425
+      governance_score: 0.11520928619090319
+      social_score: -0.3628697699097513
+    volatility_30d:
+      ESG_Total: 0.3846446732195143
+      E_Score: 0.03854087341310341
+      G_Score: 0.42740229808596913
+      S_Score: 0.11719731274482302
+      environmental_score: -0.09004831042864832
+      governance_score: 0.4294449571035955
+      social_score: 0.07459197593814428
+  financial_columns:
+  - current_price
+  - returns_1y
+  - volatility_30d
+  - roe
+  - roa
+  - sharpe_ratio
+  - beta
+  significant_correlations:
+  - correlation: -0.3628697699097513
+    esg_variable: social_score
+    financial_variable: sharpe_ratio
+    strength: Moderate
+  - correlation: 0.4294449571035955
+    esg_variable: governance_score
+    financial_variable: volatility_30d
+    strength: Moderate
+  - correlation: -0.34951289624357246
+    esg_variable: governance_score
+    financial_variable: roe
+    strength: Moderate
+  - correlation: -0.3751834581249465
+    esg_variable: E_Score
+    financial_variable: returns_1y
+    strength: Moderate
+  - correlation: -0.32023463430602134
+    esg_variable: S_Score
+    financial_variable: roe
+    strength: Moderate
+  - correlation: 0.42740229808596913
+    esg_variable: G_Score
+    financial_variable: volatility_30d
+    strength: Moderate
+  - correlation: -0.3000620378603357
+    esg_variable: G_Score
+    financial_variable: roa
+    strength: Moderate
+  - correlation: -0.3414972680705389
+    esg_variable: ESG_Total
+    financial_variable: returns_1y
+    strength: Moderate
+  - correlation: 0.3846446732195143
+    esg_variable: ESG_Total
+    financial_variable: volatility_30d
+    strength: Moderate
+executive_summary:
+  analysis_date: '2025-08-31 16:39:50'
+  data_summary:
+    esg_metrics_available: 3
+    financial_metrics_available: 4
+    total_companies: 31
+  key_findings:
+  - Found 9 significant correlations between ESG and financial metrics
+  - "Best regression model: Lasso Regression (R\xB2 = -0.009)"
+  - Analyzed 6 sectors for ESG performance differences
+  recommendations:
+  - Consider expanding ESG data collection for more comprehensive analysis
+  - Implement regular ESG monitoring for temporal trend analysis
+  - Focus on sectors with significant ESG-financial correlations
+regression_analysis:
+  Lasso Regression:
+    coefficients:
+      ESG_Total: -0.0
+      E_Score: -0.0
+      G_Score: -0.0
+      S_Score: -0.0
+    cv_mean: -1.8249769615150693
+    cv_std: 1.7780664681721712
+    feature_importance:
+      ESG_Total: 0.0
+      E_Score: 0.0
+      G_Score: 0.0
+      S_Score: 0.0
+    mae: 0.007591475303557733
+    mse: 0.00010897930783612249
+    r2: -0.008628818121635407
+  Linear Regression:
+    coefficients:
+      ESG_Total: -0.00011616366506188857
+      E_Score: -9.884407845687364e-05
+      G_Score: -5.590895597000883e-05
+      S_Score: -0.00019556386103429462
+    cv_mean: -3.553576809750679
+    cv_std: 4.047105584303298
+    feature_importance:
+      ESG_Total: 0.00011616366506188857
+      E_Score: 9.884407845687364e-05
+      G_Score: 5.590895597000883e-05
+      S_Score: 0.00019556386103429462
+    mae: 0.007143882473248204
+    mse: 0.00010987032683874836
+    r2: -0.01687540604173754
+  Random Forest:
+    coefficients: null
+    cv_mean: -6.4643387773675345
+    cv_std: 8.605992265114798
+    feature_importance:
+      ESG_Total: 0.46968525392336574
+      E_Score: 0.12831749311704665
+      G_Score: 0.2272945161741461
+      S_Score: 0.17470273678544146
+    mae: 0.007787938503127216
+    mse: 0.00012697569841250153
+    r2: -0.1751895948225124
+  Ridge Regression:
+    coefficients:
+      ESG_Total: -0.00011614207799569599
+      E_Score: -9.883697660435934e-05
+      G_Score: -5.591676084874823e-05
+      S_Score: -0.00019549750614491292
+    cv_mean: -3.552946887163542
+    cv_std: 4.046536987955839
+    feature_importance:
+      ESG_Total: 0.00011614207799569599
+      E_Score: 9.883697660435934e-05
+      G_Score: 5.591676084874823e-05
+      S_Score: 0.00019549750614491292
+    mae: 0.007143920222514154
+    mse: 0.00010986096697371763
+    r2: -0.016788778315876662
+sector_analysis:
+  anova_results:
+    ESG_Total:
+      f_statistic: 2.621031427424104
+      p_value: 0.05417160223977199
+      significant: &id001 !!python/object/apply:numpy._core.multiarray.scalar
+      - &id002 !!python/object/apply:numpy.dtype
+        args:
+        - b1
+        - false
+        - true
+        state: !!python/tuple
+        - 3
+        - '|'
+        - null
+        - null
+        - null
+        - -1
+        - -1
+        - 0
+      - !!binary |
+        AA==
+    E_Score:
+      f_statistic: 1.3056093923532095
+      p_value: 0.2994017357227572
+      significant: *id001
+    G_Score:
+      f_statistic: 8.903887100930548
+      p_value: 0.0001167502524625914
+      significant: &id003 !!python/object/apply:numpy._core.multiarray.scalar
+      - *id002
+      - !!binary |
+        AQ==
+    S_Score:
+      f_statistic: 1.4389711243074996
+      p_value: 0.25158104559913197
+      significant: *id001
+    roa:
+      f_statistic: 4.173851952869509
+      p_value: 0.008639904352241254
+      significant: *id003
+    roe:
+      f_statistic: 1.8688346550501012
+      p_value: 0.14295338532105226
+      significant: *id001
+    sharpe_ratio:
+      f_statistic: 0.35238050699100165
+      p_value: 0.8749202116163539
+      significant: *id001
+    volatility_30d:
+      f_statistic: 9.667543340390544
+      p_value: 6.662059014322568e-05
+      significant: *id003
+  sector_mapping:
+    ACS.MC: Industrials
+    AENA.MC: Industrials
+    AMS.MC: Technology
+    ANA.MC: Industrials
+    BBVA.MC: Financial Services
+    BKT.MC: Financial Services
+    CAB.MC: Financial Services
+    CIE.MC: Consumer Discretionary
+    COL.MC: Real Estate
+    ELE.MC: Utilities
+    ENG.MC: Utilities
+    FDR.MC: Industrials
+    FER.MC: Industrials
+    GRF.MC: Healthcare
+    IAG.MC: Industrials
+    IBE.MC: Utilities
+    IDR.MC: Technology
+    ITX.MC: Consumer Discretionary
+    LOG.MC: Industrials
+    MAP.MC: Financial Services
+    MEL.MC: Consumer Discretionary
+    MTS.MC: Materials
+    NTGY.MC: Utilities
+    PHM.MC: Healthcare
+    REE.MC: Utilities
+    REP.MC: Energy
+    ROL.MC: Industrials
+    SAB.MC: Financial Services
+    SAN.MC: Financial Services
+    SCYR.MC: Industrials
+    SLR.MC: Utilities
+    TEF.MC: Telecommunications
+    UNI.MC: Financial Services
+    VIS.MC: Consumer Discretionary
+    VLA.MC: Real Estate
+  sector_statistics:
+    Consumer Discretionary:
+      company_count: 4
+      esg_metrics:
+        ESG_Total: 45.67013633229508
+        E_Score: 50.641090443031175
+        G_Score: 40.868719623228905
+        S_Score: 45.64609640665748
+      esg_std:
+        ESG_Total: 10.115601816135799
+        E_Score: 19.011286569157814
+        G_Score: 11.898513193460095
+        S_Score: 12.159696856156481
+      financial_metrics:
+        roa: 8.291000125
+        roe: 22.550749000000003
+        sharpe_ratio: 0.3488650481273837
+        volatility_30d: 0.0127505850873239
+      financial_std:
+        roa: 4.2881584639174335
+        roe: 7.09402140086994
+        sharpe_ratio: 0.19869725677476544
+        volatility_30d: 0.004709523309871042
+    Financial Services:
+      company_count: 6
+      esg_metrics:
+        ESG_Total: 57.85957932860051
+        E_Score: 45.34937397458373
+        G_Score: 74.24400314780274
+        S_Score: 53.488863171924066
+      esg_std:
+        ESG_Total: 9.52303903386506
+        E_Score: 22.758543892699578
+        G_Score: 10.236370462828452
+        S_Score: 9.61144109940336
+      financial_metrics:
+        roa: 1.30766668
+        roe: 14.895500083333332
+        sharpe_ratio: 0.41522506475936494
+        volatility_30d: 0.014784078389416018
+      financial_std:
+        roa: 1.0416008117610775
+        roe: 3.5005804613664346
+        sharpe_ratio: 0.1298225522278506
+        volatility_30d: 0.0026082741259223466
+    Healthcare:
+      company_count: 2
+      esg_metrics:
+        ESG_Total: 62.56737264801624
+        E_Score: 48.83721175082792
+        G_Score: 82.6402571572748
+        S_Score: 55.61637980839269
+      esg_std:
+        ESG_Total: 12.011560691311022
+        E_Score: 23.128632214146975
+        G_Score: 2.4426913175190763
+        S_Score: 10.753324280866769
+      financial_metrics:
+        roa: 5.16650025
+        roe: 13.466000000000001
+        sharpe_ratio: 0.30758951925891564
+        volatility_30d: 0.032677926631144646
+      financial_std:
+        roa: 1.047225072226599
+        roe: 11.986874154674354
+        sharpe_ratio: 0.6220670358581296
+        volatility_30d: 0.003988677458710541
+    Industrials:
+      company_count: 8
+      esg_metrics:
+        ESG_Total: 53.23540786394384
+        E_Score: 56.00953125046253
+        G_Score: 55.26218396926737
+        S_Score: 48.37309091436452
+      esg_std:
+        ESG_Total: 6.179252204974071
+        E_Score: 10.871931451161728
+        G_Score: 11.963950859549684
+        S_Score: 14.39517759202927
+      financial_metrics:
+        roa: 4.6356249125
+        roe: 31.164749999999998
+        sharpe_ratio: 0.4681171923941534
+        volatility_30d: 0.011647381811289938
+      financial_std:
+        roa: 2.83979901416771
+        roe: 18.551450077308175
+        sharpe_ratio: 0.17075456151885457
+        volatility_30d: 0.0020665464936284175
+    Technology:
+      company_count: 2
+      esg_metrics:
+        ESG_Total: 46.88294841465386
+        E_Score: 51.12034378309457
+        G_Score: 54.410417272100204
+        S_Score: 34.88997907187449
+      esg_std:
+        ESG_Total: 3.439882080138021
+        E_Score: 10.17398722390033
+        G_Score: 7.080570039543599
+        S_Score: 13.30273954721305
+      financial_metrics:
+        roa: 7.2795002
+        roe: 28.079501
+        sharpe_ratio: 0.3377105414635374
+        volatility_30d: 0.0103635450116522
+      financial_std:
+        roa: 2.950756880734176
+        roe: 1.4036083748688601
+        sharpe_ratio: 0.21980133019378612
+        volatility_30d: 0.0020072225145823584
+    Utilities:
+      company_count: 5
+      esg_metrics:
+        ESG_Total: 46.67467368636942
+        E_Score: 68.74547967943508
+        G_Score: 36.0050641893716
+        S_Score: 35.59679869021059
+      esg_std:
+        ESG_Total: 4.7632382383416845
+        E_Score: 8.174718749649674
+        G_Score: 15.679740335656994
+        S_Score: 18.02921339770891
+      financial_metrics:
+        roa: 4.55940004
+        roe: 16.22560004
+        sharpe_ratio: 0.32556416216991196
+        volatility_30d: 0.01173877834277828
+      financial_std:
+        roa: 1.4539040235380079
+        roe: 8.58120395047455
+        sharpe_ratio: 0.2916656494333088
+        volatility_30d: 0.007051307411573638
+statistical_tests:
+  E_Score_normality:
+    is_normal: *id003
+    p_value: 0.1303125552670577
+    statistic: 0.9471632387550732
+    test: Shapiro-Wilk
+  G_Score_normality:
+    is_normal: *id003
+    p_value: 0.6278041031055608
+    statistic: 0.9737698198210877
+    test: Shapiro-Wilk
+  S_Score_normality:
+    is_normal: *id001
+    p_value: 0.038468177084893286
+    statistic: 0.9279076198988473
+    test: Shapiro-Wilk
+  esg_returns_correlation:
+    pearson:
+      correlation: -0.341497268070539
+      p_value: 0.06007942049108912
+    spearman:
+      correlation: -0.2685483870967742
+      p_value: 0.14408187701688063
+temporal_analysis:
+  data_points: 31
+  date_range: Current snapshot (no historical ESG data available)
+  recommendation: Implement historical ESG data collection for temporal analysis

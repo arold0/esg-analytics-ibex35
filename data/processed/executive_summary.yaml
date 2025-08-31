@@ -1,0 +1,75 @@
+analysis_metadata:
+  date: '2025-08-31 16:39:50'
+  esg_metrics_available: 3
+  financial_metrics_available: 4
+  total_companies_analyzed: 31
+key_findings:
+  best_model_r2: 0
+  best_regression_model: null
+  sectors_analyzed: 6
+  significant_correlations_count: 9
+  strongest_correlations:
+  - correlation: !!python/object/apply:numpy._core.multiarray.scalar
+    - &id001 !!python/object/apply:numpy.dtype
+      args:
+      - f8
+      - false
+      - true
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - !!binary |
+      FgueIEI5178=
+    esg_variable: social_score
+    financial_variable: sharpe_ratio
+    strength: Moderate
+  - correlation: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      zUqMswZ82z8=
+    esg_variable: governance_score
+    financial_variable: volatility_30d
+    strength: Moderate
+  - correlation: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      X165Vmte1r8=
+    esg_variable: governance_score
+    financial_variable: roe
+    strength: Moderate
+  - correlation: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      rWWpegED2L8=
+    esg_variable: E_Score
+    financial_variable: returns_1y
+    strength: Moderate
+  - correlation: !!python/object/apply:numpy._core.multiarray.scalar
+    - *id001
+    - !!binary |
+      MwRZaLl+1L8=
+    esg_variable: S_Score
+    financial_variable: roe
+    strength: Moderate
+recommendations:
+- Consider expanding ESG data collection for more comprehensive analysis
+- Implement regular ESG monitoring for temporal trend analysis
+- Focus on sectors with significant ESG-financial correlations
+sector_insights:
+  sector_count: 6
+  sectors_with_data:
+  - Industrials
+  - Financial Services
+  - Consumer Discretionary
+  - Healthcare
+  - Technology
+  - Utilities
+statistical_tests:
+  normality_tests: 3
+  tests_performed: 4

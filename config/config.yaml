@@ -1,0 +1,340 @@
+# ESG Analytics IBEX35 - Configuration File
+# ========================================
+# This file contains all configuration parameters for the ESG analytics project.
+# Update these values according to your environment and requirements.
+
+# Project Information
+# ===================
+project:
+  name: "ESG Analytics IBEX35"
+  version: "1.0.0"
+  description: "Análisis integral de factores ESG para empresas del IBEX35"
+  author: "Arold0"
+  repository: "https://github.com/arold0/esg-analytics-ibex35"
+
+# Data Sources Configuration
+# ==========================
+data_sources:
+  # Financial Data Sources
+  financial:
+    yahoo_finance:
+      enabled: true
+      base_url: "https://finance.yahoo.com"
+      timeout: 30
+      retry_attempts: 3
+      delay_between_requests: 1.0  # seconds
+    
+    # Alternative financial data sources
+    alpha_vantage:
+      enabled: false
+      api_key: ""  # Add your Alpha Vantage API key here
+      base_url: "https://www.alphavantage.co/query"
+    
+    investing_com:
+      enabled: false
+      base_url: "https://es.investing.com"
+      timeout: 30
+  
+  # ESG Data Sources
+  esg:
+    # Sustainalytics (requires subscription)
+    sustainalytics:
+      enabled: false
+      api_key: ""
+      base_url: "https://api.sustainalytics.com"
+    
+    # MSCI ESG (requires subscription)
+    msci_esg:
+      enabled: false
+      api_key: ""
+      base_url: "https://api.msci.com"
+    
+    # Public ESG data sources
+    public_sources:
+      enabled: true
+      sources:
+        - "https://www.bolsamadrid.es"
+        - "https://www.cnmv.es"
+        - "https://www.iberdrola.com"
+        - "https://www.repsol.com"
+
+# IBEX35 Companies Configuration
+# ==============================
+ibex35:
+  # List of IBEX35 companies (as of latest update)
+  companies:
+    - symbol: "SAN"
+      name: "Banco Santander"
+      sector: "Financial Services"
+      weight: 11.23  # Percentage weight in IBEX35
+    
+    - symbol: "BBVA"
+      name: "Banco Bilbao Vizcaya Argentaria"
+      sector: "Financial Services"
+      weight: 8.45
+    
+    - symbol: "TEF"
+      name: "Telefónica"
+      sector: "Telecommunications"
+      weight: 6.78
+    
+    - symbol: "IBE"
+      name: "Iberdrola"
+      sector: "Utilities"
+      weight: 5.92
+    
+    - symbol: "REP"
+      name: "Repsol"
+      sector: "Energy"
+      weight: 4.56
+    
+    - symbol: "ITX"
+      name: "Inditex"
+      sector: "Consumer Discretionary"
+      weight: 4.23
+    
+    - symbol: "ACS"
+      name: "ACS"
+      sector: "Industrials"
+      weight: 3.89
+    
+    - symbol: "FER"
+      name: "Ferrovial"
+      sector: "Industrials"
+      weight: 3.45
+    
+    - symbol: "ENG"
+      name: "Enagás"
+      sector: "Utilities"
+      weight: 2.78
+    
+    - symbol: "MAP"
+      name: "Mapfre"
+      sector: "Financial Services"
+      weight: 2.34
+
+# Data Collection Settings
+# ========================
+data_collection:
+  # Time period for historical data
+  time_period:
+    start_date: "2020-01-01"
+    end_date: "2024-12-31"
+    frequency: "daily"  # daily, weekly, monthly
+  
+  # Data update frequency
+  update_frequency:
+    financial_data: "daily"
+    esg_data: "monthly"
+    company_info: "quarterly"
+  
+  # Rate limiting and delays
+  rate_limiting:
+    requests_per_minute: 60
+    delay_between_requests: 1.0  # seconds
+    max_retries: 3
+    retry_delay: 5.0  # seconds
+
+# ESG Metrics Configuration
+# =========================
+esg_metrics:
+  # Environmental Metrics
+  environmental:
+    - metric: "carbon_emissions"
+      description: "CO2 emissions (tons)"
+      unit: "tons"
+      source: "company_reports"
+    
+    - metric: "energy_efficiency"
+      description: "Energy consumption per revenue"
+      unit: "MWh/€M"
+      source: "company_reports"
+    
+    - metric: "renewable_energy"
+      description: "Percentage of renewable energy"
+      unit: "%"
+      source: "company_reports"
+    
+    - metric: "waste_management"
+      description: "Waste recycling rate"
+      unit: "%"
+      source: "company_reports"
+  
+  # Social Metrics
+  social:
+    - metric: "gender_diversity"
+      description: "Percentage of women in leadership"
+      unit: "%"
+      source: "company_reports"
+    
+    - metric: "employee_satisfaction"
+      description: "Employee satisfaction score"
+      unit: "score"
+      source: "surveys"
+    
+    - metric: "community_investment"
+      description: "Community investment as % of revenue"
+      unit: "%"
+      source: "company_reports"
+    
+    - metric: "labor_rights"
+      description: "Labor rights compliance score"
+      unit: "score"
+      source: "external_ratings"
+  
+  # Governance Metrics
+  governance:
+    - metric: "board_independence"
+      description: "Percentage of independent directors"
+      unit: "%"
+      source: "company_reports"
+    
+    - metric: "executive_compensation"
+      description: "CEO to average worker pay ratio"
+      unit: "ratio"
+      source: "company_reports"
+    
+    - metric: "transparency_score"
+      description: "Corporate transparency score"
+      unit: "score"
+      source: "external_ratings"
+    
+    - metric: "anti_corruption"
+      description: "Anti-corruption policy score"
+      unit: "score"
+      source: "external_ratings"
+
+# Analysis Configuration
+# ======================
+analysis:
+  # Correlation analysis settings
+  correlation:
+    method: "pearson"  # pearson, spearman, kendall
+    significance_level: 0.05
+    min_data_points: 30
+  
+  # Machine learning settings
+  machine_learning:
+    test_size: 0.2
+    random_state: 42
+    cross_validation_folds: 5
+    
+    # Models to use
+    models:
+      - "linear_regression"
+      - "random_forest"
+      - "xgboost"
+      - "neural_network"
+  
+  # Time series analysis
+  time_series:
+    window_size: 30  # days
+    forecast_horizon: 90  # days
+    seasonality: true
+
+# Visualization Settings
+# ======================
+visualization:
+  # Plot settings
+  plots:
+    figure_size: [12, 8]
+    dpi: 300
+    style: "seaborn-v0_8"
+    color_palette: "viridis"
+  
+  # Dashboard settings
+  dashboard:
+    theme: "light"
+    page_title: "ESG Analytics IBEX35"
+    page_icon: "📊"
+    layout: "wide"
+  
+  # Export settings
+  export:
+    format: "png"  # png, jpg, svg, pdf
+    dpi: 300
+    transparent: false
+
+# File Paths Configuration
+# ========================
+paths:
+  # Data directories
+  data:
+    raw: "data/raw"
+    processed: "data/processed"
+    cleaned: "data/cleaned"
+    external: "data/external"
+  
+  # Output directories
+  output:
+    reports: "reports"
+    figures: "reports/figures"
+    dashboards: "reports/dashboard"
+    models: "models"
+  
+  # Log files
+  logs:
+    directory: "logs"
+    level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+    format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# API Configuration
+# =================
+api:
+  # Rate limiting
+  rate_limit:
+    requests_per_minute: 60
+    burst_limit: 100
+  
+  # Authentication
+  authentication:
+    timeout: 30
+    verify_ssl: true
+  
+  # Headers for web scraping
+  headers:
+    User-Agent: "ESG-Analytics-Bot/1.0 (Educational Project)"
+    Accept: "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+    Accept-Language: "en-US,en;q=0.5"
+    Accept-Encoding: "gzip, deflate"
+    Connection: "keep-alive"
+
+# Development Settings
+# ====================
+development:
+  # Debug mode
+  debug: false
+  
+  # Logging level
+  logging_level: "INFO"
+  
+  # Cache settings
+  cache:
+    enabled: true
+    directory: "cache"
+    expiration_hours: 24
+  
+  # Test settings
+  testing:
+    use_sample_data: true
+    sample_size: 100
+    mock_apis: true
+
+# Environment Variables (for sensitive data)
+# ==========================================
+# These should be set in your environment or .env file
+environment_variables:
+  - "ALPHA_VANTAGE_API_KEY"
+  - "SUSTAINALYTICS_API_KEY"
+  - "MSCI_ESG_API_KEY"
+  - "DATABASE_URL"
+  - "SECRET_KEY"
+
+# Notes and Documentation
+# =======================
+notes:
+  - "Update company list quarterly to reflect IBEX35 changes"
+  - "API keys should be stored in environment variables"
+  - "Rate limiting is important to avoid being blocked"
+  - "Cache data to reduce API calls and improve performance"
+  - "Backup configuration before making changes"

@@ -1,0 +1,57 @@
+# ESG Analytics IBEX35 - Conda Environment Configuration
+# =====================================================
+# This file defines the conda environment for the ESG analytics project.
+# It includes all necessary dependencies for data collection, analysis,
+# visualization, and web application development.
+
+name: esg-analytics
+channels:
+  - conda-forge    # Primary channel for data science packages
+  - defaults       # Default conda channel for core packages
+
+dependencies:
+  # Core Python version
+  - python=3.11    # Stable Python version with good package compatibility
+  
+  # Data Manipulation & Analysis
+  - pandas         # Data manipulation and analysis
+  - numpy          # Numerical computing and array operations
+  
+  # Data Visualization
+  - matplotlib     # Basic plotting and visualization
+  - seaborn        # Statistical data visualization
+  
+  # Machine Learning & Statistics
+  - scikit-learn   # Machine learning algorithms
+  
+  # Development Environment
+  - jupyter        # Jupyter notebooks for interactive development
+  
+  # Package Management
+  - pip            # Python package installer for packages not in conda
+  
+  # Additional packages via pip (not available in conda channels)
+  - pip:
+    - yfinance     # Yahoo Finance API for financial data collection
+    - beautifulsoup4  # Web scraping and HTML parsing
+    - selenium     # Web automation for dynamic content
+    - plotly       # Interactive plots and dashboards
+    - dash         # Interactive web applications
+    - streamlit    # Rapid web app development for data science
+
+# Installation Instructions:
+# =========================
+# 1. Create the environment:
+#    conda env create -f environment.yml
+#
+# 2. Activate the environment:
+#    conda activate esg-analytics
+#
+# 3. Verify installation:
+#    python -c "import pandas, numpy, yfinance; print('Environment ready!')"
+#
+# 4. Start Jupyter:
+#    jupyter notebook
+#
+# Note: This environment includes all dependencies from requirements.txt
+# but uses conda for better package management and compatibility.

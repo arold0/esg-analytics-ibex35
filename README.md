@@ -6,6 +6,25 @@
 
 > **Análisis integral de factores ESG (Environmental, Social, Governance) para las empresas del IBEX35**
 
+## 📊 Resultados Actuales
+
+### ✅ **Datos Recolectados:**
+- **31 de 35 empresas** del IBEX35 (88.6% de éxito)
+- **Datos históricos 2019-2024** completos
+- **Métricas financieras** calculadas automáticamente
+- **Scores ESG compuestos** generados
+
+### 🔍 **Hallazgos Estadísticos:**
+- **9 correlaciones significativas** entre ESG y métricas financieras
+- **6 sectores analizados** con diferencias estadísticas
+- **Modelos de ML** implementados (R² hasta -0.175)
+- **Tests de significancia** completados
+
+### 📈 **Correlaciones Más Fuertes:**
+1. **Social Score ↔ Sharpe Ratio**: -0.363
+2. **Governance Score ↔ Volatilidad**: 0.429
+3. **Governance Score ↔ ROE**: -0.350
+
 ## 🎯 Descripción del Proyecto
 
 Este proyecto realiza un análisis completo de los factores ESG (Environmental, Social, Governance) de las empresas que componen el índice IBEX35 de la Bolsa de Madrid. El objetivo es proporcionar insights valiosos sobre el rendimiento sostenible de las principales empresas españolas y su correlación con el rendimiento financiero.
@@ -90,14 +109,28 @@ python -c "import pandas, yfinance, plotly, streamlit; print('✅ All packages i
 ### 1. Recolección de Datos
 
 ```bash
-# Ejecutar script de recolección
+# Ejecutar script de recolección completa
 python scripts/download_data.py
 
 # O usar el notebook
 jupyter notebook notebooks/01-data-collection.ipynb
 ```
 
-### 2. Análisis Exploratorio
+### 2. Procesamiento de Datos
+
+```bash
+# Procesar y limpiar datos descargados
+python scripts/process_data.py
+```
+
+### 3. Análisis Estadístico
+
+```bash
+# Ejecutar análisis estadístico completo
+python scripts/run_analysis.py
+```
+
+### 4. Análisis Exploratorio
 
 ```bash
 # Abrir notebook de análisis
@@ -148,13 +181,20 @@ python scripts/generate_report.py
 - **Social**: Diversidad, derechos laborales, impacto comunitario
 - **Governance**: Transparencia, independencia del consejo, remuneración ejecutiva
 
-### 📈 Análisis Financiero
-- Rendimiento bursátil histórico
-- Ratios financieros clave
-- Análisis de volatilidad
-- Correlación ESG vs. Rendimiento
+### 📈 Análisis Financiero ✅ IMPLEMENTADO
+- Rendimiento bursátil histórico (2019-2024)
+- Ratios financieros clave (ROE, ROA, Sharpe, Volatilidad)
+- Análisis de volatilidad y drawdown
+- Correlación ESG vs. Rendimiento (9 correlaciones significativas)
 
-### 📊 Visualizaciones
+### 🧮 Análisis Estadístico ✅ IMPLEMENTADO
+- Correlación entre métricas ESG y financieras
+- Modelos de regresión (Linear, Ridge, Lasso, Random Forest)
+- Tests estadísticos de significancia
+- Análisis por sectores con ANOVA
+- Machine Learning con cross-validation
+
+### 📊 Visualizaciones 🚧 EN DESARROLLO
 - Gráficos de evolución temporal
 - Mapas de calor de correlaciones
 - Dashboards interactivos
@@ -198,14 +238,19 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 
 ## 📈 Roadmap
 
-### Fase 1: MVP (En desarrollo)
+### Fase 1: MVP ✅ COMPLETADO
 - [x] Estructura del proyecto
 - [x] Configuración del entorno
-- [ ] Recolección de datos básicos
-- [ ] Análisis exploratorio inicial
+- [x] Recolección de datos básicos (31/35 empresas, 88.6% éxito)
+- [x] Análisis exploratorio inicial
+- [x] Procesamiento y limpieza de datos
+- [x] Análisis estadístico completo
 
-### Fase 2: Análisis Avanzado
-- [ ] Modelos de machine learning
+### Fase 2: Análisis Avanzado 🚧 EN PROGRESO
+- [x] Modelos de machine learning (Regresión, Random Forest)
+- [x] Análisis de correlaciones ESG-Financieras
+- [x] Tests estadísticos de significancia
+- [x] Análisis por sectores con ANOVA
 - [ ] Dashboard interactivo
 - [ ] Reportes automáticos
 - [ ] API REST

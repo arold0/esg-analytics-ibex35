@@ -32,8 +32,9 @@ openpyxl>=3.1.0                  # Excel file reading and writing
 # ===================================
 statsmodels>=0.14.0              # Statistical modeling and hypothesis testing
 scipy>=1.11.0                    # Scientific computing and optimization
-matplotlib>=3.10.0               # Basic plotting and visualization
+matplotlib>=3.7.0                # Basic plotting and visualization
 seaborn>=0.13.0                  # Statistical data visualization
+pyyaml>=6.0                      # YAML file processing for configuration
 
 # Advanced Visualization (Not in conda)
 # =====================================

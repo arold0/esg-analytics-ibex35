@@ -13,17 +13,21 @@
 - **Datos históricos 2019-2024** completos
 - **Métricas financieras** calculadas automáticamente
 - **Scores ESG compuestos** generados
+- **Análisis sectorial** completado (6 sectores)
 
 ### 🔍 **Hallazgos Estadísticos:**
 - **9 correlaciones significativas** entre ESG y métricas financieras
-- **6 sectores analizados** con diferencias estadísticas
-- **Modelos de ML** implementados (R² hasta -0.175)
-- **Tests de significancia** completados
+- **6 sectores analizados** con diferencias estadísticas significativas
+- **4 modelos de ML** implementados y evaluados
+- **Tests de normalidad y ANOVA** completados
+- **Análisis de regresión** con cross-validation
 
 ### 📈 **Correlaciones Más Fuertes:**
-1. **Social Score ↔ Sharpe Ratio**: -0.363
-2. **Governance Score ↔ Volatilidad**: 0.429
-3. **Governance Score ↔ ROE**: -0.350
+1. **Social Score ↔ Sharpe Ratio**: -0.363 (Moderada)
+2. **Governance Score ↔ Volatilidad**: 0.429 (Moderada)
+3. **Governance Score ↔ ROE**: -0.350 (Moderada)
+4. **E_Score ↔ Returns 1Y**: -0.375 (Moderada)
+5. **ESG_Total ↔ Volatilidad**: 0.385 (Moderada)
 
 ## 🎯 Descripción del Proyecto
 
@@ -147,8 +151,12 @@ streamlit run src/visualization.py
 ### 4. Generación de Reportes
 
 ```bash
-# Generar reporte ejecutivo
+# Generar reportes ejecutivos
 python scripts/generate_report.py
+
+# Ver visualizaciones generadas
+open reports/figures/comprehensive_dashboard.html
+open reports/figures/correlation_heatmap.html
 ```
 
 ## 🛠️ Tecnologías Utilizadas
@@ -194,11 +202,12 @@ python scripts/generate_report.py
 - Análisis por sectores con ANOVA
 - Machine Learning con cross-validation
 
-### 📊 Visualizaciones 🚧 EN DESARROLLO
+### 📊 Visualizaciones ✅ IMPLEMENTADO
 - Gráficos de evolución temporal
-- Mapas de calor de correlaciones
-- Dashboards interactivos
-- Reportes ejecutivos
+- Mapas de calor de correlaciones (HTML interactivos)
+- Dashboards comprehensivos generados
+- Distribuciones ESG por sector
+- Análisis de performance financiera
 
 ## 🤝 Contribución
 
@@ -246,13 +255,14 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 - [x] Procesamiento y limpieza de datos
 - [x] Análisis estadístico completo
 
-### Fase 2: Análisis Avanzado 🚧 EN PROGRESO
-- [x] Modelos de machine learning (Regresión, Random Forest)
-- [x] Análisis de correlaciones ESG-Financieras
-- [x] Tests estadísticos de significancia
-- [x] Análisis por sectores con ANOVA
-- [ ] Dashboard interactivo
-- [ ] Reportes automáticos
+### Fase 2: Análisis Avanzado ✅ COMPLETADO
+- [x] Modelos de machine learning (Linear, Ridge, Lasso, Random Forest)
+- [x] Análisis de correlaciones ESG-Financieras (9 significativas)
+- [x] Tests estadísticos de significancia (Shapiro-Wilk, ANOVA)
+- [x] Análisis por sectores con ANOVA (6 sectores)
+- [x] Visualizaciones interactivas (HTML dashboards)
+- [x] Análisis de regresión con cross-validation
+- [ ] Reportes ejecutivos automáticos
 - [ ] API REST
 
 ### Fase 3: Escalabilidad

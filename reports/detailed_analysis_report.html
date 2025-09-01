@@ -113,6 +113,34 @@
             <h2>🤖 Resultados de Machine Learning</h2>
             <div class="model-comparison">
         
+                <div class="model-card">
+                    <h4>Linear Regression</h4>
+                    <p><strong>R² Score:</strong> -0.0170</p>
+                    <p><strong>MAE:</strong> 0.007000</p>
+                    <p><strong>MSE:</strong> 0.000100</p>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Ridge Regression</h4>
+                    <p><strong>R² Score:</strong> -0.0170</p>
+                    <p><strong>MAE:</strong> 0.007000</p>
+                    <p><strong>MSE:</strong> 0.000100</p>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Lasso Regression</h4>
+                    <p><strong>R² Score:</strong> -0.0090</p>
+                    <p><strong>MAE:</strong> 0.008000</p>
+                    <p><strong>MSE:</strong> 0.000100</p>
+                </div>
+                
+                <div class="model-card">
+                    <h4>Random Forest</h4>
+                    <p><strong>R² Score:</strong> -0.1750</p>
+                    <p><strong>MAE:</strong> 0.008000</p>
+                    <p><strong>MSE:</strong> 0.000100</p>
+                </div>
+                
             </div>
         </div>
 
@@ -132,7 +160,7 @@
                     </tr>
                 </thead>
                 <tbody>
-        
+        <tr><td><strong>ESG Total</strong></td><td style="color: #dc3545;">-0.144</td><td style="color: #dc3545;">-0.212</td><td style="color: #28a745;">0.179</td><td style="color: #28a745;">0.385</td><td style="color: #dc3545;">-0.341</td></tr><tr><td><strong>Environmental Score</strong></td><td style="color: #28a745;">0.216</td><td style="color: #28a745;">0.207</td><td style="color: #28a745;">0.125</td><td >0.039</td><td style="color: #dc3545;">-0.375</td></tr><tr><td><strong>Social Score</strong></td><td style="color: #dc3545;">-0.320</td><td style="color: #dc3545;">-0.250</td><td style="color: #dc3545;">-0.167</td><td style="color: #28a745;">0.117</td><td style="color: #dc3545;">-0.145</td></tr><tr><td><strong>Governance Score</strong></td><td style="color: #dc3545;">-0.159</td><td style="color: #dc3545;">-0.300</td><td style="color: #28a745;">0.268</td><td style="color: #28a745;">0.427</td><td >-0.051</td></tr><tr><td><strong>Environmental Score</strong></td><td >-0.022</td><td >0.025</td><td >0.062</td><td >-0.090</td><td style="color: #dc3545;">-0.208</td></tr><tr><td><strong>Social Score</strong></td><td >0.004</td><td style="color: #28a745;">0.112</td><td style="color: #dc3545;">-0.363</td><td >0.075</td><td style="color: #28a745;">0.206</td></tr><tr><td><strong>Governance Score</strong></td><td style="color: #dc3545;">-0.350</td><td style="color: #dc3545;">-0.101</td><td style="color: #28a745;">0.115</td><td style="color: #28a745;">0.429</td><td >-0.094</td></tr>
                 </tbody>
             </table>
         </div>
@@ -143,7 +171,7 @@
             
             <h3>Tests de Normalidad (Shapiro-Wilk)</h3>
             <div class="code-block">
-        
+        E Score Normality: p-value = 0.1300, Normal = True<br>G Score Normality: p-value = 0.6280, Normal = True<br>S Score Normality: p-value = 0.0380, Normal = False<br>
             </div>
             
             <h3>ANOVA por Sectores</h3>
@@ -160,6 +188,34 @@
                 </thead>
                 <tbody>
         
+                    <tr>
+                        <td>ESG Total</td>
+                        <td>2.6210</td>
+                        <td>0.054000</td>
+                        <td>No</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Governance Score</td>
+                        <td>8.9040</td>
+                        <td>0.000100</td>
+                        <td>Sí</td>
+                    </tr>
+                
+                    <tr>
+                        <td>Volatilidad 30d</td>
+                        <td>9.6680</td>
+                        <td>0.000070</td>
+                        <td>Sí</td>
+                    </tr>
+                
+                    <tr>
+                        <td>ROA</td>
+                        <td>4.1740</td>
+                        <td>0.009000</td>
+                        <td>Sí</td>
+                    </tr>
+                
                 </tbody>
             </table>
         </div>

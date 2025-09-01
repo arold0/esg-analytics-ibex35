@@ -159,6 +159,19 @@ open reports/figures/comprehensive_dashboard.html
 open reports/figures/correlation_heatmap.html
 ```
 
+### 5. API REST
+
+```bash
+# Instalar dependencias de API
+pip install fastapi uvicorn pydantic
+
+# Lanzar API REST
+uvicorn src.api:app --reload --host 0.0.0.0 --port 8000
+
+# Acceder a documentación interactiva
+open http://localhost:8000
+```
+
 ## 🛠️ Tecnologías Utilizadas
 
 ### 📊 Data Science & Analytics
@@ -175,6 +188,7 @@ open reports/figures/correlation_heatmap.html
 
 ### 🌐 Web Development
 - **Streamlit** - Aplicaciones web rápidas
+- **FastAPI** - API REST moderna y rápida
 - **BeautifulSoup4** - Web scraping
 - **Selenium** - Automatización web
 
@@ -263,7 +277,7 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 - [x] Visualizaciones interactivas (HTML dashboards)
 - [x] Análisis de regresión con cross-validation
 - [x] Reportes ejecutivos automáticos
-- [ ] API REST
+- [x] API REST
 
 ### Fase 3: Escalabilidad
 - [ ] Base de datos

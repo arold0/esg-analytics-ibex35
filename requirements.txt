@@ -1,20 +1,23 @@
-# ESG Analytics IBEX35 - Additional Requirements (Post-Conda Installation)
-# ======================================================================
-# IMPORTANT: This file contains ADDITIONAL packages that are not included
-# in the conda environment.yml file. You should FIRST install the conda
-# environment, then install these additional requirements.
+# ESG Analytics IBEX35 - Requirements
+# ===================================
+# Updated: September 2025
+# Project Status: Phase 2 COMPLETED ✅ | Phase 3 IN DEVELOPMENT 🚧
 #
-# STEP 1: Install conda environment
-#    conda env create -f environment.yml
-#    conda activate esg-analytics
+# This file contains ALL Python dependencies for the ESG Analytics project.
+# Install after setting up the conda environment:
 #
-# STEP 2: Install additional requirements (this file)
-#    pip install -r requirements.txt
+# INSTALLATION:
+#   1. conda env create -f environment.yml
+#   2. conda activate esg-analytics  
+#   3. pip install -r requirements.txt
 #
-# The conda environment already includes:
-# ✅ pandas, numpy, matplotlib, seaborn, scikit-learn, jupyter
-#
-# This file adds the following packages:
+# FEATURES SUPPORTED:
+# ✅ Data collection (Yahoo Finance, web scraping)
+# ✅ Statistical analysis and ML models
+# ✅ Interactive visualizations and dashboards
+# ✅ Executive report generation
+# ✅ REST API with FastAPI
+# 🚧 Database integration (Phase 3)
 
 # Financial Data Collection (Not in conda)
 # ========================================
@@ -45,39 +48,44 @@ plotly>=5.17.0                   # Interactive plots and dashboards
 dash>=2.14.0                     # Interactive web applications
 streamlit>=1.28.0                # Rapid web app development for data science
 
-# REST API (Not in conda)
-# =======================
-fastapi>=0.104.0                 # Modern, fast web framework for building APIs
-uvicorn>=0.24.0                  # ASGI server for FastAPI
-pydantic>=2.4.0                  # Data validation and settings management
+# REST API - Phase 2 ✅ IMPLEMENTED
+# ==================================
+fastapi>=0.116.0                 # Modern, fast web framework for building APIs
+uvicorn>=0.35.0                  # ASGI server for FastAPI
+pydantic>=2.11.0                 # Data validation and settings management
+
+# Database Integration - Phase 3 🚧 PLANNED
+# ==========================================
+# sqlalchemy>=2.0.0              # Database ORM and toolkit
+# psycopg2-binary>=2.9.0          # PostgreSQL adapter
+# alembic>=1.13.0                 # Database migration tool
 
 # Development Tools (Optional)
 # ============================
-# Uncomment the following lines for development:
-# jupyter>=1.0.0                  # Jupyter notebooks (already in conda)
+# Uncomment for development environment:
 # black>=23.0.0                   # Code formatting
-# flake8>=6.0.0                   # Code linting
+# flake8>=6.0.0                   # Code linting  
 # pytest>=7.0.0                   # Testing framework
+# pre-commit>=3.0.0               # Git hooks for code quality
 
-# Quick Installation Commands:
-# ============================
-# Option 1: Install everything at once
-#    conda env create -f environment.yml && conda activate esg-analytics && pip install -r requirements.txt
-#
-# Option 2: Step by step
-#    1. conda env create -f environment.yml
-#    2. conda activate esg-analytics
-#    3. pip install -r requirements.txt
-#
-# Option 3: Install only specific categories
-#    pip install yfinance requests beautifulsoup4 selenium  # Data collection
-#    pip install plotly dash streamlit                      # Visualization & Web apps
-#    pip install statsmodels scipy openpyxl                # Analysis & File handling
+# INSTALLATION COMMANDS:
+# ======================
+# Full installation (recommended):
+#   conda env create -f environment.yml && conda activate esg-analytics && pip install -r requirements.txt
 #
 # Verification:
-# =============
-# After installation, verify with:
-#    python -c "import pandas, yfinance, plotly, streamlit; print('✅ All packages installed successfully!')"
+#   python -c "import pandas, yfinance, plotly, streamlit, fastapi; print('✅ Environment ready!')"
 #
-# Note: Some packages may require system-level dependencies
-# (e.g., ChromeDriver for Selenium, system fonts for matplotlib)
+# API Testing:
+#   uvicorn src.api:app --host 0.0.0.0 --port 8000
+#   curl http://localhost:8000/health
+#
+# CURRENT PROJECT STATUS:
+# ======================
+# ✅ Phase 1: MVP (Data collection, basic analysis)
+# ✅ Phase 2: Advanced Analysis (ML, correlations, API, reports)
+# 🚧 Phase 3: Scalability (Database, multi-indices, web app)
+# 📋 Phase 4: Production (Docker, CI/CD, monitoring)
+#
+# Last Updated: September 2025
+# Dependencies: 84 total packages across all categories

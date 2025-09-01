@@ -6,23 +6,24 @@
 
 > **Análisis integral de factores ESG (Environmental, Social, Governance) para las empresas del IBEX35**
 
-## 📊 Resultados Actuales
+## 📊 Estado del Proyecto
 
-### ✅ **Datos Recolectados:**
-- **31 de 35 empresas** del IBEX35 (88.6% de éxito)
-- **Datos históricos 2019-2024** completos
-- **Métricas financieras** calculadas automáticamente
-- **Scores ESG compuestos** generados
-- **Análisis sectorial** completado (6 sectores)
+### ✅ **Fase 1 & 2 COMPLETADAS:**
+- **31 de 35 empresas** del IBEX35 analizadas (88.6% de éxito)
+- **Datos históricos 2019-2024** recolectados y procesados
+- **Pipeline completo** de análisis implementado
+- **API REST funcional** con 8 endpoints
+- **Reportes ejecutivos** generados automáticamente
+- **Visualizaciones interactivas** en HTML
 
-### 🔍 **Hallazgos Estadísticos:**
-- **9 correlaciones significativas** entre ESG y métricas financieras
-- **6 sectores analizados** con diferencias estadísticas significativas
-- **4 modelos de ML** implementados y evaluados
-- **Tests de normalidad y ANOVA** completados
-- **Análisis de regresión** con cross-validation
+### 🔍 **Resultados Clave:**
+- **9 correlaciones significativas** ESG-Financieras identificadas
+- **6 sectores** analizados con ANOVA
+- **4 modelos ML** evaluados (Linear, Ridge, Lasso, Random Forest)
+- **API REST** con documentación Swagger integrada
+- **Dashboard interactivo** disponible
 
-### 📈 **Correlaciones Más Fuertes:**
+### 📈 **Correlaciones Principales:**
 1. **Social Score ↔ Sharpe Ratio**: -0.363 (Moderada)
 2. **Governance Score ↔ Volatilidad**: 0.429 (Moderada)
 3. **Governance Score ↔ ROE**: -0.350 (Moderada)
@@ -33,37 +34,44 @@
 
 Este proyecto realiza un análisis completo de los factores ESG (Environmental, Social, Governance) de las empresas que componen el índice IBEX35 de la Bolsa de Madrid. El objetivo es proporcionar insights valiosos sobre el rendimiento sostenible de las principales empresas españolas y su correlación con el rendimiento financiero.
 
-### 🌟 Características Principales
+### 🌟 Características Implementadas
 
-- 📈 **Análisis de Datos Financieros**: Recopilación y análisis de datos bursátiles históricos
-- 🌱 **Métricas ESG**: Evaluación de factores ambientales, sociales y de gobernanza
-- 📊 **Visualizaciones Interactivas**: Dashboards y gráficos dinámicos
-- 🤖 **Machine Learning**: Modelos predictivos y análisis de correlaciones
-- 📋 **Reportes Ejecutivos**: Generación automática de informes
-- 🌐 **Aplicación Web**: Dashboard interactivo con Streamlit
+- 📈 **Pipeline Completo**: Recolección, procesamiento y análisis automatizado
+- 🌱 **Análisis ESG**: Evaluación integral de 31 empresas IBEX35
+- 📊 **Visualizaciones**: Dashboards HTML interactivos y mapas de calor
+- 🤖 **Machine Learning**: 4 modelos evaluados con cross-validation
+- 📋 **Reportes Automáticos**: Informes ejecutivos y técnicos
+- 🌐 **API REST**: 8 endpoints con documentación Swagger
+- 📊 **Análisis Estadístico**: Correlaciones, ANOVA y tests de significancia
 
 ## 🏗️ Estructura del Proyecto
 
 ```
 esg-analytics-ibex35/
 ├── 📁 data/                    # Datos del proyecto
-│   ├── raw/                   # Datos sin procesar
-│   ├── processed/             # Datos procesados
-│   └── cleaned/               # Datos limpios
+│   ├── raw/                   # Datos originales (CSV)
+│   ├── processed/             # Análisis y resultados (YAML)
+│   └── cleaned/               # Datos procesados
 ├── 📁 notebooks/              # Jupyter notebooks
 │   ├── 01-data-collection.ipynb
-│   ├── 02-data-cleaning.ipynb
-│   ├── 03-exploratory-analysis.ipynb
-│   ├── 04-correlation-analysis.ipynb
-│   └── 05-visualization.ipynb
-├── 📁 src/                    # Código fuente
-│   ├── data_collection.py
-│   ├── data_processing.py
-│   ├── analysis.py
-│   └── visualization.py
+│   └── 02-data-cleaning.ipynb
+├── 📁 src/                    # Código fuente principal
+│   ├── data_collection.py     # Recolección de datos
+│   ├── data_processing.py     # Procesamiento y limpieza
+│   ├── analysis.py            # Análisis estadístico y ML
+│   ├── visualization.py       # Dashboards y gráficos
+│   └── api.py                 # API REST con FastAPI
 ├── 📁 scripts/                # Scripts de automatización
-├── 📁 reports/                # Reportes generados
-├── 📁 config/                 # Configuraciones
+│   ├── download_data.py       # Descarga automática
+│   ├── process_data.py        # Procesamiento batch
+│   ├── run_analysis.py        # Análisis completo
+│   └── generate_report.py     # Generación de reportes
+├── 📁 reports/                # Reportes HTML generados
+│   ├── figures/               # Visualizaciones interactivas
+│   ├── detailed_analysis_report.html
+│   └── executive_summary.html
+├── 📁 config/                 # Configuraciones YAML
+├── 📁 logs/                   # Logs de ejecución
 └── 📁 tests/                  # Tests unitarios
 ```
 
@@ -279,11 +287,32 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 - [x] Reportes ejecutivos automáticos
 - [x] API REST
 
-### Fase 3: Escalabilidad
-- [ ] Base de datos
-- [ ] Actualizaciones automáticas
-- [ ] Múltiples índices bursátiles
-- [ ] Aplicación web completa
+### Fase 3: Escalabilidad 🚧 EN DESARROLLO
+- [ ] **Base de datos relacional** (PostgreSQL/SQLite)
+  - [ ] Esquema de datos optimizado
+  - [ ] Migración de datos CSV a BD
+  - [ ] Índices y optimización de consultas
+- [ ] **Actualizaciones automáticas**
+  - [ ] Scheduler para recolección diaria
+  - [ ] Pipeline de actualización incremental
+  - [ ] Notificaciones de cambios significativos
+- [ ] **Múltiples índices bursátiles**
+  - [ ] Soporte para FTSE 100, DAX 30, CAC 40
+  - [ ] Análisis comparativo entre mercados
+  - [ ] Benchmarking internacional
+- [ ] **Aplicación web completa**
+  - [ ] Frontend React/Vue.js
+  - [ ] Dashboard en tiempo real
+  - [ ] Sistema de alertas y notificaciones
+  - [ ] Exportación de reportes personalizados
+
+### Fase 4: Producción 📋 PLANIFICADO
+- [ ] **Containerización** (Docker)
+- [ ] **CI/CD Pipeline** (GitHub Actions)
+- [ ] **Monitoreo y logging** avanzado
+- [ ] **Autenticación y autorización**
+- [ ] **Cache y optimización** de rendimiento
+- [ ] **Documentación técnica** completa
 
 ---
 

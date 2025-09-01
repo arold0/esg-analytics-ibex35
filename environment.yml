@@ -1,8 +1,10 @@
-# ESG Analytics IBEX35 - Conda Environment Configuration
-# =====================================================
-# This file defines the conda environment for the ESG analytics project.
-# It includes all necessary dependencies for data collection, analysis,
-# visualization, and web application development.
+# ESG Analytics IBEX35 - Conda Environment
+# ========================================
+# Updated: September 2025
+# Project Status: Phase 2 COMPLETED ✅ | Phase 3 IN DEVELOPMENT 🚧
+#
+# This environment provides the foundation for ESG analytics.
+# Additional packages are installed via requirements.txt
 
 name: esg-analytics
 channels:
@@ -10,48 +12,75 @@ channels:
   - defaults       # Default conda channel for core packages
 
 dependencies:
-  # Core Python version
-  - python=3.11    # Stable Python version with good package compatibility
+  # Core Python
+  - python=3.11    # Stable version with excellent package compatibility
   
-  # Data Manipulation & Analysis
-  - pandas         # Data manipulation and analysis
-  - numpy          # Numerical computing and array operations
+  # Data Science Foundation
+  - pandas>=2.0.0  # Data manipulation and analysis
+  - numpy>=1.24.0  # Numerical computing
   
-  # Data Visualization
-  - matplotlib     # Basic plotting and visualization
-  - seaborn        # Statistical data visualization
+  # Visualization Base
+  - matplotlib>=3.7.0  # Plotting foundation
+  - seaborn>=0.13.0    # Statistical visualization
   
-  # Machine Learning & Statistics
-  - scikit-learn   # Machine learning algorithms
+  # Machine Learning
+  - scikit-learn>=1.3.0  # ML algorithms and tools
   
-  # Development Environment
-  - jupyter        # Jupyter notebooks for interactive development
+  # Development
+  - jupyter>=1.0.0       # Interactive notebooks
+  - ipykernel            # Jupyter kernel support
   
   # Package Management
-  - pip            # Python package installer for packages not in conda
+  - pip>=23.0            # Package installer
   
-  # Additional packages via pip (not available in conda channels)
+  # Additional packages via pip
   - pip:
-    - yfinance     # Yahoo Finance API for financial data collection
-    - beautifulsoup4  # Web scraping and HTML parsing
-    - selenium     # Web automation for dynamic content
-    - plotly       # Interactive plots and dashboards
-    - dash         # Interactive web applications
-    - streamlit    # Rapid web app development for data science
+    # Financial Data - Phase 1 ✅
+    - yfinance>=0.2.12
+    - beautifulsoup4>=4.12.0
+    - selenium>=4.15.0
+    - requests>=2.31.0
+    - lxml>=4.9.0
+    
+    # Analysis & Processing - Phase 1&2 ✅
+    - statsmodels>=0.14.0
+    - scipy>=1.11.0
+    - openpyxl>=3.1.0
+    - pyyaml>=6.0
+    
+    # Visualization - Phase 2 ✅
+    - plotly>=5.17.0
+    - dash>=2.14.0
+    - streamlit>=1.28.0
+    
+    # API - Phase 2 ✅
+    - fastapi>=0.116.0
+    - uvicorn>=0.35.0
+    - pydantic>=2.11.0
 
-# Installation Instructions:
-# =========================
-# 1. Create the environment:
+# INSTALLATION & USAGE:
+# =====================
+# 1. Create environment:
 #    conda env create -f environment.yml
 #
-# 2. Activate the environment:
+# 2. Activate environment:
 #    conda activate esg-analytics
 #
 # 3. Verify installation:
-#    python -c "import pandas, numpy, yfinance; print('Environment ready!')"
+#    python -c "import pandas, yfinance, fastapi; print('✅ Environment ready!')"
 #
-# 4. Start Jupyter:
-#    jupyter notebook
+# 4. Run project components:
+#    python scripts/run_analysis.py     # Full analysis
+#    uvicorn src.api:app --port 8000    # REST API
+#    streamlit run src/visualization.py # Dashboard
 #
-# Note: This environment includes all dependencies from requirements.txt
-# but uses conda for better package management and compatibility.
+# FEATURES INCLUDED:
+# ==================
+# ✅ Data collection and processing
+# ✅ Statistical analysis and ML models  
+# ✅ Interactive visualizations
+# ✅ Executive report generation
+# ✅ REST API with FastAPI
+# 🚧 Database integration (Phase 3)
+#
+# Total packages: ~40 (conda) + ~15 (pip) = 55+ dependencies

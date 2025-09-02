@@ -8,11 +8,11 @@
 
 ## 📊 Estado del Proyecto
 
-### ✅ **Fase 1 & 2 COMPLETADAS:**
+### ✅ **Fase 1, 2 & 3 COMPLETADAS:**
 - **31 de 35 empresas** del IBEX35 analizadas (88.6% de éxito)
 - **Datos históricos 2019-2024** recolectados y procesados
 - **Pipeline completo** de análisis implementado
-- **API REST funcional** con 8 endpoints
+- **API REST v2 funcional** con base de datos SQLite y 8 endpoints optimizados
 - **Reportes ejecutivos** generados automáticamente
 - **Visualizaciones interactivas** en HTML
 
@@ -52,6 +52,7 @@ esg-analytics-ibex35/
 │   ├── raw/                   # Datos originales (CSV)
 │   ├── processed/             # Análisis y resultados (YAML)
 │   └── cleaned/               # Datos procesados
+├── esg_analytics.db           # Base de datos SQLite
 ├── 📁 notebooks/              # Jupyter notebooks
 │   ├── 01-data-collection.ipynb
 │   └── 02-data-cleaning.ipynb
@@ -60,7 +61,9 @@ esg-analytics-ibex35/
 │   ├── data_processing.py     # Procesamiento y limpieza
 │   ├── analysis.py            # Análisis estadístico y ML
 │   ├── visualization.py       # Dashboards y gráficos
-│   └── api.py                 # API REST con FastAPI
+│   ├── database.py            # Modelos SQLAlchemy y BD
+│   ├── api.py                 # API REST v1 (legacy)
+│   └── api_v2.py              # API REST v2 con base de datos
 ├── 📁 scripts/                # Scripts de automatización
 │   ├── download_data.py       # Descarga automática
 │   ├── process_data.py        # Procesamiento batch
@@ -173,11 +176,14 @@ open reports/figures/correlation_heatmap.html
 # Instalar dependencias de API
 pip install fastapi uvicorn pydantic
 
-# Lanzar API REST
-uvicorn src.api:app --reload --host 0.0.0.0 --port 8000
+# Lanzar API REST v2 (con base de datos)
+uvicorn src.api_v2:app --reload --host 0.0.0.0 --port 8001
 
 # Acceder a documentación interactiva
-open http://localhost:8000
+open http://localhost:8001
+
+# API v1 (legacy, solo CSV)
+uvicorn src.api:app --reload --host 0.0.0.0 --port 8000
 ```
 
 ## 🛠️ Tecnologías Utilizadas
@@ -287,17 +293,18 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
 - [x] Reportes ejecutivos automáticos
 - [x] API REST
 
-### Fase 3: Escalabilidad 🚧 EN DESARROLLO
-- [ ] **Base de datos relacional** (PostgreSQL/SQLite)
-  - [ ] Esquema de datos optimizado
-  - [ ] Migración de datos CSV a BD
-  - [ ] Índices y optimización de consultas
+### Fase 3: Escalabilidad ✅ COMPLETADO
+- [x] **Base de datos relacional** (SQLite)
+  - [x] Esquema de datos optimizado con SQLAlchemy
+  - [x] Migración de datos CSV a BD (31 empresas)
+  - [x] Índices y optimización de consultas
+  - [x] API v2 integrada con base de datos
 - [ ] **Actualizaciones automáticas**
   - [ ] Scheduler para recolección diaria
   - [ ] Pipeline de actualización incremental
   - [ ] Notificaciones de cambios significativos
 - [ ] **Múltiples índices bursátiles**
-  - [ ] Soporte para FTSE 100, DAX 30, CAC 40
+  - [x] Soporte básico para FTSE 100, DAX 30
   - [ ] Análisis comparativo entre mercados
   - [ ] Benchmarking internacional
 - [ ] **Aplicación web completa**

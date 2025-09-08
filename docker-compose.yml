@@ -1,0 +1,103 @@
+# ESG Analytics IBEX35 - Docker Compose Configuration
+# ==================================================
+# Production-ready multi-service orchestration
+# Services: API v2, Database, Streamlit Dashboard, Nginx
+
+version: '3.8'
+
+services:
+  # Main API Service (FastAPI v2 with SQLite)
+  api:
+    build: .
+    container_name: esg-api
+    ports:
+      - "8001:8001"
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=sqlite:///app/esg_analytics.db
+      - API_HOST=0.0.0.0
+      - API_PORT=8001
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./reports:/app/reports
+      - ./esg_analytics.db:/app/esg_analytics.db
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    restart: unless-stopped
+    networks:
+      - esg-network
+
+  # Streamlit Dashboard Service
+  dashboard:
+    build: .
+    container_name: esg-dashboard
+    command: ["streamlit", "run", "src/visualization.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    ports:
+      - "8501:8501"
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=sqlite:///app/esg_analytics.db
+    volumes:
+      - ./data:/app/data
+      - ./reports:/app/reports
+      - ./esg_analytics.db:/app/esg_analytics.db
+    depends_on:
+      - api
+    restart: unless-stopped
+    networks:
+      - esg-network
+
+  # Nginx Reverse Proxy (Optional - for production)
+  nginx:
+    image: nginx:alpine
+    container_name: esg-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./docker/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./docker/ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - api
+      - dashboard
+    restart: unless-stopped
+    networks:
+      - esg-network
+    profiles:
+      - production
+
+  # Data Processing Service (for scheduled tasks)
+  processor:
+    build: .
+    container_name: esg-processor
+    command: ["python", "-c", "print('Data processor ready. Run scripts manually or via cron.')"]
+    environment:
+      - PYTHONPATH=/app
+      - DATABASE_URL=sqlite:///app/esg_analytics.db
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+      - ./esg_analytics.db:/app/esg_analytics.db
+    restart: "no"
+    networks:
+      - esg-network
+    profiles:
+      - processing
+
+networks:
+  esg-network:
+    driver: bridge
+    name: esg-analytics-network
+
+volumes:
+  esg-data:
+    driver: local
+  esg-logs:
+    driver: local
+  esg-reports:
+    driver: local

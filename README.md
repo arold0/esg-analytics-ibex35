@@ -88,8 +88,30 @@ esg-analytics-ibex35/
 - Python 3.11 o superior
 - Conda (recomendado) o pip
 - Git
+- **Docker & Docker Compose** (recomendado para producción)
 
-### Instalación Rápida
+### 🐳 Instalación con Docker (Recomendado)
+
+```bash
+# 1. Clonar el repositorio
+git clone https://github.com/arold0/esg-analytics-ibex35.git
+cd esg-analytics-ibex35
+
+# 2. Instalar Docker (si no está instalado)
+# macOS con Homebrew:
+brew install --cask docker
+# Iniciar Docker Desktop desde Aplicaciones
+
+# 3. Ejecutar con Docker
+./scripts/docker-deploy.sh start
+
+# 4. Acceder a los servicios
+# API v2 + Docs: http://localhost:8001/docs
+# Dashboard: http://localhost:8501
+# Nginx (Producción): http://localhost:80
+```
+
+### 📦 Instalación Manual
 
 ```bash
 # 1. Clonar el repositorio
@@ -175,6 +197,19 @@ open reports/figures/correlation_heatmap.html
 
 ### 5. API REST
 
+#### 🐳 Con Docker (Recomendado)
+```bash
+# Iniciar todos los servicios
+./scripts/docker-deploy.sh start
+
+# Ver estado de servicios
+./scripts/docker-deploy.sh status
+
+# Ver logs en tiempo real
+./scripts/docker-deploy.sh logs
+```
+
+#### 📦 Instalación Manual
 ```bash
 # Instalar dependencias de API
 pip install fastapi uvicorn pydantic
@@ -187,6 +222,52 @@ open http://localhost:8001/docs
 
 # API v1 (legacy, solo CSV)
 uvicorn src.api:app --reload --host 0.0.0.0 --port 8000
+```
+
+## 🐳 Docker & Containerización
+
+### Servicios Disponibles
+
+| Servicio | Puerto | Descripción | URL |
+|----------|--------|-------------|-----|
+| **API v2** | 8001 | FastAPI + SQLite | http://localhost:8001/docs |
+| **Dashboard** | 8501 | Streamlit | http://localhost:8501 |
+| **Nginx** | 80/443 | Reverse Proxy | http://localhost |
+| **Processor** | - | Tareas batch | On-demand |
+
+### Comandos Docker Útiles
+
+```bash
+# Gestión de servicios
+./scripts/docker-deploy.sh start    # Iniciar servicios
+./scripts/docker-deploy.sh stop     # Detener servicios
+./scripts/docker-deploy.sh restart  # Reiniciar servicios
+./scripts/docker-deploy.sh status   # Ver estado
+./scripts/docker-deploy.sh logs     # Ver logs
+./scripts/docker-deploy.sh clean    # Limpiar recursos
+
+# Comandos directos docker-compose
+docker-compose up -d                # Iniciar en background
+docker-compose down                 # Detener y remover
+docker-compose ps                   # Ver servicios activos
+docker-compose logs -f api          # Logs específicos
+
+# Construcción y desarrollo
+docker-compose build --no-cache     # Reconstruir imágenes
+docker-compose up --build           # Construir e iniciar
+```
+
+### Perfiles de Deployment
+
+```bash
+# Desarrollo (API + Dashboard)
+docker-compose up api dashboard
+
+# Producción completa (con Nginx)
+docker-compose --profile production up
+
+# Solo procesamiento de datos
+docker-compose --profile processing up processor
 ```
 
 ## 🛠️ Tecnologías Utilizadas
@@ -316,8 +397,13 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
   - [ ] Sistema de alertas y notificaciones
   - [ ] Exportación de reportes personalizados
 
-### Fase 4: Producción 📋 PLANIFICADO
-- [ ] **Containerización** (Docker)
+### Fase 4: Producción 🚧 EN DESARROLLO
+- [x] **Containerización** (Docker)
+  - [x] Dockerfile optimizado con multi-stage build
+  - [x] docker-compose.yml para orquestación de servicios
+  - [x] Nginx reverse proxy configurado
+  - [x] Scripts de deployment automatizado
+  - [x] Health checks y monitoreo básico
 - [ ] **CI/CD Pipeline** (GitHub Actions)
 - [ ] **Monitoreo y logging** avanzado
 - [ ] **Autenticación y autorización**

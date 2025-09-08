@@ -12,7 +12,8 @@
 - **31 de 35 empresas** del IBEX35 analizadas (88.6% de éxito)
 - **Datos históricos 2019-2024** recolectados y procesados
 - **Pipeline completo** de análisis implementado
-- **API REST v2 funcional** con base de datos SQLite y 8 endpoints optimizados
+- **Base de datos SQLite** integrada con migración completa
+- **API REST v2 funcional** con base de datos y 8 endpoints optimizados
 - **Reportes ejecutivos** generados automáticamente
 - **Visualizaciones interactivas** en HTML
 
@@ -68,7 +69,9 @@ esg-analytics-ibex35/
 │   ├── download_data.py       # Descarga automática
 │   ├── process_data.py        # Procesamiento batch
 │   ├── run_analysis.py        # Análisis completo
-│   └── generate_report.py     # Generación de reportes
+│   ├── generate_report.py     # Generación de reportes
+│   ├── generate_visualizations.py  # Visualizaciones
+│   └── migrate_to_database.py # Migración a BD
 ├── 📁 reports/                # Reportes HTML generados
 │   ├── figures/               # Visualizaciones interactivas
 │   ├── detailed_analysis_report.html
@@ -176,11 +179,11 @@ open reports/figures/correlation_heatmap.html
 # Instalar dependencias de API
 pip install fastapi uvicorn pydantic
 
-# Lanzar API REST v2 (con base de datos)
+# Lanzar API REST v2 (principal - con base de datos)
 uvicorn src.api_v2:app --reload --host 0.0.0.0 --port 8001
 
-# Acceder a documentación interactiva
-open http://localhost:8001
+# Acceder a documentación interactiva Swagger
+open http://localhost:8001/docs
 
 # API v1 (legacy, solo CSV)
 uvicorn src.api:app --reload --host 0.0.0.0 --port 8000
@@ -299,10 +302,10 @@ Este proyecto está bajo la Licencia MIT. Ver el archivo [LICENSE](LICENSE) para
   - [x] Migración de datos CSV a BD (31 empresas)
   - [x] Índices y optimización de consultas
   - [x] API v2 integrada con base de datos
-- [ ] **Actualizaciones automáticas**
-  - [ ] Scheduler para recolección diaria
-  - [ ] Pipeline de actualización incremental
-  - [ ] Notificaciones de cambios significativos
+- [x] **Integración de base de datos**
+  - [x] Modelos SQLAlchemy implementados
+  - [x] Migración completa de datos
+  - [x] API v2 con endpoints optimizados
 - [ ] **Múltiples índices bursátiles**
   - [x] Soporte básico para FTSE 100, DAX 30
   - [ ] Análisis comparativo entre mercados
